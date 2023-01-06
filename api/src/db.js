@@ -3,8 +3,8 @@ const { Sequelize } = require('sequelize');
 const fs = require('fs');
 const path = require('path');
 const { DATABASE_URL } = process.env;
-//const { DB_USER, DB_PASSWORD, DB_HOST, DB_KEY } = process.env;
-let sequelize = new Sequelize(DATABASE_URL,
+const { DB_DEPLOY, DB_USER, DB_PASSWORD, DB_HOST, DB_KEY } = process.env;
+let sequelize = new Sequelize(DB_DEPLOY,
   {
     logging: false,
     native: false,
